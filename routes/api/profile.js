@@ -108,7 +108,7 @@ router.post(
     const profileFields = {};
     profileFields.user = req.user.id;
     if (req.body.name) profileFields.name = req.body.name;
-    if (req.body.image) profileFields.image = req.body.image;
+    if (req.body.profilePic) profileFields.profilePic = req.body.profilePic;
     if (req.body.bio) profileFields.bio = req.body.bio;
     if (req.body.location) profileFields.location = req.body.location;
     if (req.body.website) profileFields.website = req.body.website;

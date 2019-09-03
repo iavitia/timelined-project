@@ -9,7 +9,7 @@ const ProfileSchema = new Schema({
   name: {
     type: String
   },
-  image: {
+  profilePic: {
     type: String
   },
   bio: {

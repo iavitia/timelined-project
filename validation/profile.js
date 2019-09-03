@@ -4,21 +4,27 @@ const isEmpty = require("./is-empty");
 module.exports = function validateProfileInput(data) {
   let errors = {};
 
-  // image
-  if (!isEmpty(data.image)) {
-    if (!validator.isURL(data.image)) {
-      errors.image = "Not a valid URL";
+  // Profile Image
+  if (!isEmpty(data.profilePic)) {
+    if (!validator.isURL(data.profilePic)) {
+      errors.profilePic = "Not a valid URL";
+    }
+  }
+  // Bio
+  if (!isEmpty(data.bio)) {
+    if (!validator.isLength(data.bio, { min: 0, max: 150 })) {
+      errors.bio = "Bio cannot exceed 150 characters";
     }
   }
 
-  // website
+  // Website
   if (!isEmpty(data.website)) {
     if (!validator.isURL(data.website)) {
       errors.website = "Not a valid URL";
     }
   }
 
-  // social
+  // Social
   if (!isEmpty(data.youtube)) {
     if (!validator.isURL(data.youtube)) {
       errors.youtube = "Not a valid URL";

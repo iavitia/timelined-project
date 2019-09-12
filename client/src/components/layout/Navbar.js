@@ -1,18 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Boostrap_logo.svg"
             width="30"
             height="30"
             alt=""
           />
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler collapsed"
@@ -31,14 +32,14 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="{{ url('/login') }}">
+              <Link className="nav-link" to="/signup">
                 Sign up
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="{{ url('/register') }}">
+              <Link className="nav-link" to="/login">
                 Log in
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

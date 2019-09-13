@@ -10,7 +10,6 @@ module.exports = function validateRegisterInput(data) {
   data.username = !isEmpty(data.username) ? data.username : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
-  data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 
   // Username validation
   if (validator.isEmpty(data.username)) {
@@ -45,15 +44,6 @@ module.exports = function validateRegisterInput(data) {
 
   if (validator.contains(data.password, " ")) {
     errors.password = "Password cannot contain spaces";
-  }
-
-  // Confirmation password validation
-  if (validator.isEmpty(data.password2)) {
-    errors.password2 = "Confirm password field is required";
-  }
-
-  if (!validator.equals(data.password, data.password2)) {
-    errors.password2 = "Passwords must match";
   }
 
   return {
